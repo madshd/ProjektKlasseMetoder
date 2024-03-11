@@ -5,6 +5,8 @@ public class Student {
     private boolean active;
     private int[] grades;
 
+    private double avg;
+
     public Student(String name, boolean active, int [] grades) {
         this.name = name;
         this.active = active;
@@ -22,6 +24,25 @@ public class Student {
     public String getName() {
         return name;
     }
+
+    public int maxGrade() {
+        int max = 0;
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i] >= max) {
+                max = grades[i];
+            }
+        }
+        return max;
+    }
+
+    public double avgGrade() {
+        double avg = 0.0;
+        for (int i = 0; i < grades.length; i++) {
+            avg += grades[i];
+        }
+        return avg/grades.length;
+    }
+
 
     @Override
     public String toString() {
