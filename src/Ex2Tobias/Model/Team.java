@@ -47,17 +47,23 @@ public class Team {
 
         return activeStudents;
     }
-    public double getTeamAvarage(Team team)
-    {
-        double teamAvg = 0;
-        for (Student student : students)
-        {
-            teamAvg += student.getAverage();
-            System.out.println(teamAvg);
+    public double getTeamAverage() {
+        double totalGrade = 0;
+        int count = 0;
+        for (Student student : students) {
+            if (student.getActive()) {
+                totalGrade += student.getAverage();
+                count++;
+            }
         }
-        this.teamAvg = teamAvg / students.size();
-        return teamAvg;
+        if (count != 0) {
+            this.teamAvg = totalGrade / students.size();
+        } else {
+            this.teamAvg = 0; // Prevent division by zero
+        }
+        return this.teamAvg;
     }
+
 
     public void removeStudent (String name){
         int i = 0;

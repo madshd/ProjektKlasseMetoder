@@ -9,7 +9,7 @@ public class Test {
 
         Student student1 = new Student("Bobby", true, new int[]{3,3,12,6});
         Student student2 = new Student("Jens", true, new int[]{4, 10, 10, 12});
-        Student student3 = new Student("Peter", true, new int[]{2});
+        Student student3 = new Student("Peter", true, new int[]{2, 10, 7});
         Student student4 = new Student("Søren", false, new int[]{4});
         Student student5 = new Student("Harald", false, new int[]{2});
         Student student6 = new Student("Mosses", true, new int[]{1});
@@ -23,17 +23,20 @@ public class Test {
         System.out.println(hold1.toString());
         System.out.println(hold2.toString());
 
-        hold1.removeStudent("jens");
         System.out.println(hold1.toString());
         System.out.println(Arrays.toString(hold1.activeStudents()));
         System.out.println(Arrays.toString(hold2.activeStudents()));
 
         System.out.println(student1.gradeHigh(student1.getGrades()));
         System.out.println(student1.getAverage(student1.getGrades()));
+        System.out.println(student2.getAverage(student2.getGrades()));
+        System.out.println(student3.getAverage(student3.getGrades()));
 
         //Get Team Avg
-        hold1.getTeamAvarage(hold1);
-        System.out.println(hold1.getTeamAvarage(hold1));
+        System.out.println();
+        double teamAverage = hold1.getTeamAverage();
+        System.out.println(teamAverage);
+
 
     }
 }

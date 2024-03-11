@@ -25,16 +25,19 @@ public class Student {
     public int[] getGrades() {
         return grades;
     }
-    public double getAverage(int[] grades)
-    {
-        double avg = 0;
-        for (int i = 0; i < grades.length ; i++) {
-            avg += grades[i];
+    public double getAverage(int[] grades) {
+        double sum = 0;
+        for (int grade : grades) {
+            sum += grade;
         }
-        avg = (double) avg/grades.length;
-        this.avg = avg;
-        return (double) avg;
+        if (grades.length > 0) {
+            this.avg = sum / grades.length;
+        } else {
+            this.avg = 0; // Prevent division by zero
+        }
+        return this.avg;
     }
+
     public double getAverage()
     {
         return avg;
