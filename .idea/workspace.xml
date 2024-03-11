@@ -20,9 +20,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2dXdATKKa6GMmQe9RWU1aa7jDc2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,20 +30,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.StudentTeamApp.executor": "Run",
     "Application.Test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Datamatiker/2024/JDK/Github/ProjektKlasseMetoder/src/Ex2Tobias",
+    "last_opened_file_path": "C:/Datamatiker/2024/JDK/Github/ProjektKlasseMetoder/src/Ex2Tobias/Model",
     "settings.editor.selected.configurable": "editor.preferences.completion"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Datamatiker\2024\JDK\Github\ProjektKlasseMetoder\src\Ex2Tobias\Model" />
       <recent name="C:\Datamatiker\2024\JDK\Github\ProjektKlasseMetoder\src\Ex2Tobias" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StudentTeamApp">
+    <configuration name="StudentTeamApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex2Tobias.Model.StudentTeamApp" />
+      <module name="ProjektKlasseMetoder" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex2Tobias.Model.Test" />
       <module name="ProjektKlasseMetoder" />
@@ -53,6 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StudentTeamApp" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>

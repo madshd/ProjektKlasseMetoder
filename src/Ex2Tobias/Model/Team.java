@@ -1,67 +1,40 @@
 package Ex2Tobias.Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Team {
     private String name;
     private String room;
     private ArrayList<Student> students;
-    private double teamAvg = 0;
 
     public Team(String name, String room) {
         this.name = name;
         this.room = room;
         this.students = new ArrayList<>();
     }
-    public void addStudent(Student student)
-    {
-        if (student.getActive())
-        {
-                students.add(student);
 
-        }
-
+    public void addStudent(Student student) {
+        students.add(student);
     }
-    public String[] activeStudents()
-    {
+
+    public String[] activeStudents() {
         int count = 0;
         int j = 0;
 
-        for (Student i : students)
-        {
-            if (i.getActive())
-            {
+        for (Student i : students) {
+            if (i.isActive()) {
                 count++;
             }
         }
         String activeStudents[] = new String[count];
-        for (Student i : students)
-        {
-            if (i.getActive())
-            {
+        for (Student i : students) {
+            if (i.isActive()) {
                 activeStudents[j] = i.getName();
                 j++;
             }
         }
-
-
         return activeStudents;
-    }
-    public double getTeamAverage() {
-        double totalGrade = 0;
-        int count = 0;
-        for (Student student : students) {
-            if (student.getActive()) {
-                totalGrade += student.getAverage();
-                count++;
-            }
-        }
-        if (count != 0) {
-            this.teamAvg = totalGrade / students.size();
-        } else {
-            this.teamAvg = 0; // Prevent division by zero
-        }
-        return this.teamAvg;
     }
 
 
@@ -75,13 +48,45 @@ public class Team {
         }
     }
 
+    public double averageGrade() {
+        double totalSum = 0;
+        int totalGrades = 0;
+        for (Student student : students) {
+            int[] grades = student.getGrades();
+            for (int grade : grades) {
+                totalSum += grade;
+                totalGrades++;
+            }
+        }
+        System.out.println("Total sum of grades: " + totalSum + " from " + totalGrades + " grades");
+        return totalSum / totalGrades;
+    }
+
+    public Student[] highScoreStudent(double minAverage) {
+        int count = 0;
+        for (Student student : students) {
+            if (minAverage <= student.avgGrade()) {
+                count++;
+            }
+        }
+        Student[] highScore = new Student[count]; // Creating an array of Student objects
+        int index = 0;
+        for (Student student : students) {
+            if (minAverage <= student.avgGrade()) {
+                highScore[index] = student;
+                index++;
+            }
+        }
+
+        // Trim the array to remove any unused elements (optional)
+        return highScore;
+    }
+
     @Override
     public String toString() {
-        return "Team{" +
-                "name='" + name + '\'' +
-                ", room='" + room + '\'' +
-                ", grades=" + students +
-                '}';
+        return "Team " + name +
+                " | Room: " + room +
+                " | Students: " + students;
     }
 }
 
