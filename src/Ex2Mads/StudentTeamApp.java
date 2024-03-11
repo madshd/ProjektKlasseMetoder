@@ -23,11 +23,11 @@ public class StudentTeamApp {
         t1.addStudent(s5);
         t1.addStudent(s6);
 
-        Ex2Mads.Student s7 = new Ex2Mads.Student("Lotte", true, new int[]{7,4,10,12});
-        Ex2Mads.Student s8 = new Ex2Mads.Student("Jan", true, new int[]{7,4});
-        Ex2Mads.Student s9 = new Ex2Mads.Student("Ole", true, new int[]{4,4,10,10});
-        Ex2Mads.Student s10 = new Ex2Mads.Student("Mia Maja", true, new int[]{3,4,6});
-        Ex2Mads.Student s11 = new Ex2Mads.Student("Lord Bendtner", true, new int[]{7});
+        Ex2Mads.Student s7 = new Student("Lotte", true, new int[]{7,4,10,12});
+        Ex2Mads.Student s8 = new Student("Jan", true, new int[]{7,4});
+        Ex2Mads.Student s9 = new Student("Ole", true, new int[]{4,4,10,10});
+        Ex2Mads.Student s10 = new Student("Mia Maja", true, new int[]{3,4,6});
+        Ex2Mads.Student s11 = new Student("Lord Bendtner", true, new int[]{7});
         Ex2Mads.Student s12 = new Student("Messi", true, new int[]{4,4,4});
 
         t2.addStudent(s7);
@@ -37,8 +37,6 @@ public class StudentTeamApp {
         t2.addStudent(s11);
         t2.addStudent(s12);
 
-        t2.removeStudent("Mia Maja");
-
         System.out.println(t1.toString());
         System.out.println(Arrays.toString(t1.activeStudents()));
 
@@ -46,9 +44,8 @@ public class StudentTeamApp {
         System.out.println(Arrays.toString(t2.activeStudents()));
         System.out.println(s1.maxGrade());
         System.out.println(s7.avgGrade());
-//        System.out.println("S7, S8, S9 average: ");
 
-        System.out.println("Team average: " + t2.averageGrade());
+        System.out.printf("Team average: %.4f%n", t2.averageGrade());
 
     }
 }

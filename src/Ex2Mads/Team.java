@@ -46,42 +46,18 @@ public class Team {
         }
     }
 
-    /*
-    Udvid klassen Team med en metode, der kan returnere gennemsnittet af alle de karakterer,
-    der er givet for de studerende på teamet. (Det forudsættes, at alle teams har mindst én
-    studerende.)
-     */
-
-//    public double getTeamAverage() {
-//        double avg = 0;
-//        double totalGrade = 0;
-//        int count = 0;
-//        for (Student student : students) {
-//            if (student.isActive()) {
-//                totalGrade += student.avgGrade();
-//                count++;
-//            }
-//        }
-//        if (count != 0) {
-//            avg = totalGrade / students.size();
-//        } else {
-//            avg = 0; // Prevent division by zero
-//        }
-//        return avg;
-//    }
-
     public double averageGrade() {
         double totalSum = 0;
-        int totalStudents = students.size();
-
+        int totalGrades = 0;
         for (Student student : students) {
             int[] grades = student.getGrades();
             for (int grade : grades) {
                 totalSum += grade;
+                totalGrades++;
             }
         }
-        System.out.println("Total sum of characters: " + totalSum + " from " + totalStudents + " students.");
-        return totalSum / totalStudents;
+        System.out.println("Total sum of grades: " + totalSum + " from " + totalGrades + " grades");
+        return totalSum / totalGrades;
     }
     @Override
     public String toString() {
