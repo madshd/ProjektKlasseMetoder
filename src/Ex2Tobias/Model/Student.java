@@ -4,60 +4,49 @@ import java.util.Arrays;
 
 public class Student {
     private String name;
-    private Boolean active;
-    private int grades[];
-    private double avg = 0;
+    private boolean active;
+    private int[] grades;
 
-    public Student(String name, Boolean active, int[] grades) {
+    private double avg;
+
+    public Student(String name, boolean active, int [] grades) {
         this.name = name;
         this.active = active;
         this.grades = grades;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Boolean getActive() {
+    public boolean isActive() {
         return active;
     }
 
     public int[] getGrades() {
         return grades;
     }
-    public double getAverage(int[] grades) {
-        double sum = 0;
-        for (int grade : grades) {
-            sum += grade;
-        }
-        if (grades.length > 0) {
-            this.avg = sum / grades.length;
-        } else {
-            this.avg = 0; // Prevent division by zero
-        }
-        return this.avg;
+
+    public String getName() {
+        return name;
     }
 
-    public double getAverage()
-    {
-        return avg;
-    }
-    public int gradeHigh(int[] grades)
-    {
+    public int maxGrade() {
         int max = 0;
         for (int i = 0; i < grades.length; i++) {
-            if (grades[i] > max) {
-                max = grades[i]; // Update max to the new maximum value
+            if (grades[i] >= max) {
+                max = grades[i];
             }
-        } return max;
+        }
+        return max;
+    }
+
+    public double avgGrade() {
+        double avg = 0.0;
+        for (int i = 0; i < grades.length; i++) {
+            avg += grades[i];
+        }
+        return avg/grades.length;
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", active=" + active +
-                ", grades=" + Arrays.toString(grades) +
-                '}';
+        return "Name: " + name + " - " + "Activity: " + active + " | Grades: " + Arrays.toString(grades);
     }
 }

@@ -6,64 +6,35 @@ public class Team {
     private String name;
     private String room;
     private ArrayList<Student> students;
-    private double teamAvg = 0;
 
     public Team(String name, String room) {
         this.name = name;
         this.room = room;
         this.students = new ArrayList<>();
     }
-    public void addStudent(Student student)
-    {
-        if (student.getActive())
-        {
-                students.add(student);
 
-        }
-
+    public void addStudent(Student student) {
+        students.add(student);
     }
-    public String[] activeStudents()
-    {
-        int count = 0;
-        int j = 0;
 
-        for (Student i : students)
-        {
-            if (i.getActive())
-            {
+    public String[] activeStudents () {
+        int count = 0;
+        for (Student i : students) {
+            if (i.isActive() == true) {
                 count++;
             }
         }
-        String activeStudents[] = new String[count];
-        for (Student i : students)
-        {
-            if (i.getActive())
-            {
-                activeStudents[j] = i.getName();
-                j++;
-            }
-        }
+        String[] aStudents = new String[count];
+        count = 0;
 
-
-        return activeStudents;
-    }
-    public double getTeamAverage() {
-        double totalGrade = 0;
-        int count = 0;
-        for (Student student : students) {
-            if (student.getActive()) {
-                totalGrade += student.getAverage();
+        for (Student i : students) {
+            if (i.isActive()) {
+            aStudents[count] = i.getName();
                 count++;
             }
         }
-        if (count != 0) {
-            this.teamAvg = totalGrade / students.size();
-        } else {
-            this.teamAvg = 0; // Prevent division by zero
-        }
-        return this.teamAvg;
+        return aStudents;
     }
-
 
     public void removeStudent (String name){
         int i = 0;
@@ -75,13 +46,24 @@ public class Team {
         }
     }
 
+    public double averageGrade() {
+        double totalSum = 0;
+        int totalGrades = 0;
+        for (Student student : students) {
+            int[] grades = student.getGrades();
+            for (int grade : grades) {
+                totalSum += grade;
+                totalGrades++;
+            }
+        }
+        System.out.println("Total sum of grades: " + totalSum + " from " + totalGrades + " grades");
+        return totalSum / totalGrades;
+    }
     @Override
     public String toString() {
-        return "Team{" +
-                "name='" + name + '\'' +
-                ", room='" + room + '\'' +
-                ", grades=" + students +
-                '}';
+        return "Team " + name +
+                " | Room: " + room +
+                " | Students: " + students;
     }
 }
 
