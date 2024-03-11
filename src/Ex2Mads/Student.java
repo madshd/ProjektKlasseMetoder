@@ -1,5 +1,7 @@
 package Ex2Mads;
 
+import java.util.Arrays;
+
 public class Student {
     private String name;
     private boolean active;
@@ -45,6 +47,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Name: " + name + " - " + "Activity: " + active + " | " + grades;
+        return "Name: " + name + " - " + "Activity: " + active + " | Grades: " + Arrays.toString(grades);
     }
 }

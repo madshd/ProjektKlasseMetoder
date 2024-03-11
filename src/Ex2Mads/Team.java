@@ -87,7 +87,7 @@ public class Team {
     public String toString() {
         return "Team " + name +
                 " | Room: " + room +
-                " | Students: " + students.toString();
+                " | Students: " + students;
     }
 }
 
