@@ -1,5 +1,6 @@
 package Ex2Tobias.Model;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class StudentTeamApp {
@@ -43,6 +44,11 @@ public class StudentTeamApp {
         System.out.println(s7.avgGrade());
 
         System.out.printf("Team average: %.4f%n", t2.averageGrade());
+
+        //Min avg to pass here: 7 //opg 2.4 
+        double minAverage = 7;
+        System.out.println();
+        System.out.println("The Passing Candidates: " + Arrays.toString(t2.highScoreStudent(minAverage)));
 
     }
 }

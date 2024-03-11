@@ -1,6 +1,7 @@
 package Ex2Tobias.Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Team {
     private String name;
@@ -17,24 +18,25 @@ public class Team {
         students.add(student);
     }
 
-    public String[] activeStudents () {
+    public String[] activeStudents() {
         int count = 0;
-        for (Student i : students) {
-            if (i.isActive() == true) {
-                count++;
-            }
-        }
-        String[] aStudents = new String[count];
-        count = 0;
+        int j = 0;
 
         for (Student i : students) {
             if (i.isActive()) {
-            aStudents[count] = i.getName();
                 count++;
             }
         }
-        return aStudents;
+        String activeStudents[] = new String[count];
+        for (Student i : students) {
+            if (i.isActive()) {
+                activeStudents[j] = i.getName();
+                j++;
+            }
+        }
+        return activeStudents;
     }
+
 
     public void removeStudent (String name){
         int i = 0;
@@ -59,6 +61,27 @@ public class Team {
         System.out.println("Total sum of grades: " + totalSum + " from " + totalGrades + " grades");
         return totalSum / totalGrades;
     }
+
+    public Student[] highScoreStudent(double minAverage) {
+        int count = 0;
+        for (Student student : students) {
+            if (minAverage <= student.avgGrade()) {
+                count++;
+            }
+        }
+        Student[] highScore = new Student[count]; // Creating an array of Student objects
+        int index = 0;
+        for (Student student : students) {
+            if (minAverage <= student.avgGrade()) {
+                highScore[index] = student;
+                index++;
+            }
+        }
+
+        // Trim the array to remove any unused elements (optional)
+        return highScore;
+    }
+
     @Override
     public String toString() {
         return "Team " + name +
