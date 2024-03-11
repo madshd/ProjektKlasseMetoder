@@ -26,7 +26,7 @@ public class StudentTeamApp {
         Ex2Mads.Student s7 = new Ex2Mads.Student("Lotte", true, new int[]{7,4,10,12});
         Ex2Mads.Student s8 = new Ex2Mads.Student("Jan", true, new int[]{7,4});
         Ex2Mads.Student s9 = new Ex2Mads.Student("Ole", true, new int[]{4,4,10,10});
-        Ex2Mads.Student s10 = new Ex2Mads.Student("Mia Maja", true, new int[]{02,4,00});
+        Ex2Mads.Student s10 = new Ex2Mads.Student("Mia Maja", true, new int[]{3,4,6});
         Ex2Mads.Student s11 = new Ex2Mads.Student("Lord Bendtner", true, new int[]{7});
         Ex2Mads.Student s12 = new Student("Messi", true, new int[]{4,4,4});
 
@@ -45,7 +45,10 @@ public class StudentTeamApp {
         System.out.println(t2.toString());
         System.out.println(Arrays.toString(t2.activeStudents()));
         System.out.println(s1.maxGrade());
-        System.out.println(s1.avgGrade());
+        System.out.println(s7.avgGrade());
+//        System.out.println("S7, S8, S9 average: ");
+
+        System.out.println("Team average: " + t2.averageGrade());
 
     }
 }

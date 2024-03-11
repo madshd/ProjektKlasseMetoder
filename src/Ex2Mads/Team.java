@@ -52,11 +52,37 @@ public class Team {
     studerende.)
      */
 
-    public double avgTeam() {
-        double avg = 0;
-        return avg;
-    }
+//    public double getTeamAverage() {
+//        double avg = 0;
+//        double totalGrade = 0;
+//        int count = 0;
+//        for (Student student : students) {
+//            if (student.isActive()) {
+//                totalGrade += student.avgGrade();
+//                count++;
+//            }
+//        }
+//        if (count != 0) {
+//            avg = totalGrade / students.size();
+//        } else {
+//            avg = 0; // Prevent division by zero
+//        }
+//        return avg;
+//    }
 
+    public double averageGrade() {
+        double totalSum = 0;
+        int totalStudents = students.size();
+
+        for (Student student : students) {
+            int[] grades = student.getGrades();
+            for (int grade : grades) {
+                totalSum += grade;
+            }
+        }
+        System.out.println("Total sum of characters: " + totalSum + " from " + totalStudents + " students.");
+        return totalSum / totalStudents;
+    }
     @Override
     public String toString() {
         return "Team " + name +
