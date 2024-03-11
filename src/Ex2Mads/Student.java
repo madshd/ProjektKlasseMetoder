@@ -1,4 +1,4 @@
-package Ex1Mads;
+package Ex2Mads;
 
 public class Student {
     private String name;
