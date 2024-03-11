@@ -1,4 +1,4 @@
-package Ex1;
+package Ex1Mads;
 
 public class Student {
     private String name;
@@ -25,9 +25,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", active=" + active +
-                '}';
+        return "Name: " + name + " - " + "Activity: " + active + " | " + grades;
     }
 }
