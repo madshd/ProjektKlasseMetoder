@@ -11,4 +11,23 @@ public class Student {
         this.grades = grades;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public int[] getGrades() {
+        return grades;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", active=" + active +
+                '}';
+    }
 }
