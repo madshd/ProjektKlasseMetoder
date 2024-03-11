@@ -46,6 +46,17 @@ public class Team {
         }
     }
 
+    /*
+    Udvid klassen Team med en metode, der kan returnere gennemsnittet af alle de karakterer,
+    der er givet for de studerende på teamet. (Det forudsættes, at alle teams har mindst én
+    studerende.)
+     */
+
+    public double avgTeam() {
+        double avg = 0;
+        return avg;
+    }
+
     @Override
     public String toString() {
         return "Team " + name +

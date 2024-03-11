@@ -43,7 +43,6 @@ public class Student {
         return avg/grades.length;
     }
 
-
     @Override
     public String toString() {
         return "Name: " + name + " - " + "Activity: " + active + " | " + grades;
