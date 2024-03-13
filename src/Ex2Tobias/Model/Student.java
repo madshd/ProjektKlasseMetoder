@@ -7,6 +7,7 @@ public class Student {
     private String name;
     private boolean active;
     private int[] grades;
+    private String[] studentChoices;
 
     private double avg;
 
@@ -14,6 +15,7 @@ public class Student {
         this.name = name;
         this.active = active;
         this.grades = grades;
+        this.studentChoices = new String[10];
     }
 
     public boolean isActive() {
@@ -45,30 +47,43 @@ public class Student {
         }
         return avg/grades.length;
     }
-    public static void MultipleChoiceTest()
+    public int CorrectAnswersCount()
     {
-        int[] answers = new int[10];
-        String[] studentChoices = new String[10];
-        String[] choices = {"A", "B", "C", "D"};
-        Random random = new Random();
-        //Generate Array
-        for (int i = 0; i < answers.length ; i++) {
-            answers[i] = i;
-        }
-        for (int i = 0; i < answers.length; i++) {
-            // Shuffel Array
-            int index = (int)(Math.random() * answers.length);
-            int temp = answers[i];
-            answers[i] = answers[index];
-            answers[index] = temp;
-        }
+        int count = 0;
         for (int i = 0; i < 10 ; i++) {
-            String choice = choices[answers[i] / 3];
-            System.out.println("Choices: " + (i + 1) + ": " + choice);
-            studentChoices[i] = choice;
+            String[] correctChoices = MultipleChoiceTest.CorrectAnswers();
+            if (studentChoices[i] == correctChoices[i])
+            {
+                count++;
+            }
+            
+        } return count;
+        
+    }
+    public String[] CalcChoices() {
+        for (int i = 0; i < 10; i++) {
+            int[] answers = new int[10];
+            String[] studentChoices = new String[10];
+            String[] choices = {"A", "B", "C", "D"};
+            Random random = new Random();
+            //Generate Array
+            for (i = 0; i < answers.length; i++) {
+                answers[i] = i;
+            }
+            for (i = 0; i < answers.length; i++) {
+                // Shuffel Array
+                int index = (int) (Math.random() * answers.length);
+                int temp = answers[i];
+                answers[i] = answers[index];
+                answers[index] = temp;
+            }
+            for (i = 0; i < 10; i++) {
+                String choice = choices[answers[i] / 3];
+//            System.out.println("Choices: " + (i+ 1) + ": " + choice);
+                this.studentChoices[i] = choice;
 
-        }
-        System.out.println("studentChoices: " + Arrays.toString(studentChoices));
+            }
+        } return this.studentChoices;
     }
 
     @Override
