@@ -50,11 +50,18 @@ public class StudentTeamApp {
         System.out.println();
         System.out.println("The Passing Candidates: " + Arrays.toString(t2.highScoreStudent(minAverage)));
 
-        MultipleChoiceTest.MultipleChoiceTest(s7);
-        MultipleChoiceTest.MultipleChoiceTest(s6);
+        MultipleChoiceTest.MultipleChoiceTest(s1);
+        MultipleChoiceTest.MultipleChoiceTest(s2);
+        MultipleChoiceTest.MultipleChoiceTest(s3);
+        MultipleChoiceTest.MultipleChoiceTest(s4);
         MultipleChoiceTest.MultipleChoiceTest(s5);
-        System.out.println(s7.CorrectAnswersCount());
-        System.out.println(s6.CorrectAnswersCount());
-        System.out.println(s5.CorrectAnswersCount());
+        MultipleChoiceTest.MultipleChoiceTest(s6);
+        MultipleChoiceTest.MultipleChoiceTest(s7);
+        MultipleChoiceTest.MultipleChoiceTest(s8);
+        MultipleChoiceTest.MultipleChoiceTest(s9);
+        MultipleChoiceTest.MultipleChoiceTest(s10);
+        // Correct for 5-7 students
+        System.out.println("Student 7 has: " + s7.CorrectAnswersCount() + " Correct");
+        System.out.println("Team1 Overall Correct score: " + t1.TeamCorrectCount());
     }
 }
