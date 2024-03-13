@@ -47,6 +47,9 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Name: " + name + " - " + "Activity: " + active + " | Grades: " + Arrays.toString(grades);
+        return "[Name: " + name +
+                " - " + "Activity: " + active +
+                " | Grades: " + Arrays.toString(grades) +
+                " - GPA: " + avgGrade() + "]";
     }
 }

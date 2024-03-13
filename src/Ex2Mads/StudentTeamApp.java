@@ -46,6 +46,7 @@ public class StudentTeamApp {
         System.out.println(s7.avgGrade());
 
         System.out.printf("Team average: %.4f%n", t2.averageGrade());
+        System.out.println("High Score: " + Arrays.toString(t2.highScoreStudents(7.0)));
 
     }
 }
