@@ -47,19 +47,19 @@ public class Student {
         }
         return avg/grades.length;
     }
-    public int CorrectAnswersCount()
-    {
-        int count = 0;
-        for (int i = 0; i < 10 ; i++) {
-            String[] correctChoices = MultipleChoiceTest.CorrectAnswers();
-            if (studentChoices[i] == correctChoices[i])
-            {
-                count++;
-            }
-            
-        } return count;
-        
-    }
+//    public int CorrectAnswersCount()
+//    {
+//        int count = 0;
+//        for (int i = 0; i < 10 ; i++) {
+//            String[] correctChoices = MultipleChoiceTest.CorrectAnswers();
+//            if (studentChoices[i] == correctChoices[i])
+//            {
+//                count++;
+//            }
+//
+//        } return count;
+//
+//    }
     public String[] CalcChoices() {
         for (int i = 0; i < 10; i++) {
             int[] answers = new int[10];
