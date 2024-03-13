@@ -64,5 +64,6 @@ public class StudentTeamApp {
 
 
         System.out.println(Arrays.toString(t2.printStudents()));
+        System.out.println("Hvilke spørgsmål og hvor mange der har svaret korrekt, fra 1-10: \n" + Arrays.toString(t2.testResults()));
     }
 }

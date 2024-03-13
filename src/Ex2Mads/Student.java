@@ -34,6 +34,11 @@ public class Student {
         return name;
     }
 
+    public String[] getStudentChoices() {
+        return studentChoices;
+    }
+
+
     public int maxGrade() {
         int max = 0;
         for (int i = 0; i < grades.length; i++) {

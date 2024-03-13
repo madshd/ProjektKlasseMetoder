@@ -2,6 +2,7 @@ package Ex2Mads;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 import Ex2Mads.Student;
 public class Team {
     private String name;
@@ -121,6 +122,18 @@ public int teamScore() {
             i++;
         }
         return printStudents;
+    }
+
+    public int[] testResults() {
+        int[] arr = new int[10];
+
+        for (Student student : students) {
+            for (int i = 0; i < 10; i++) {
+                if (student.getStudentChoices()[i] == MultipleChoiceTest.CorrectAnswers()[i])
+                    arr[i]++;
+            }
+        }
+        return arr;
     }
 }
 
