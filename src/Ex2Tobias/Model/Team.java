@@ -81,6 +81,13 @@ public class Team {
         // Trim the array to remove any unused elements (optional)
         return highScore;
     }
+    public int TeamCorrectCount ()
+    {
+        int teamCount = 0;
+        for (Student students : students)
+            teamCount += students.CorrectAnswersCount();
+      return teamCount;
+    }
 
     @Override
     public String toString() {
