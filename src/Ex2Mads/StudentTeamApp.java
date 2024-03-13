@@ -2,6 +2,7 @@ package Ex2Mads;
 
 import Ex2Mads.Student;
 import Ex2Mads.Team;
+import Ex2Tobias.Model.MultipleChoiceTest;
 
 import java.util.Arrays;
 
@@ -48,5 +49,14 @@ public class StudentTeamApp {
         System.out.printf("Team average: %.4f%n", t2.averageGrade());
         System.out.println("High Score: " + Arrays.toString(t2.highScoreStudents(7.0)));
 
+        Ex2Mads.MultipleChoiceTest.MultipleChoiceTest(s7);
+        Ex2Mads.MultipleChoiceTest.MultipleChoiceTest(s6);
+        Ex2Mads.MultipleChoiceTest.MultipleChoiceTest(s5);
+        System.out.println(s7.CorrectAnswersCount());
+        System.out.println(s6.CorrectAnswersCount());
+        System.out.println(s5.CorrectAnswersCount());
+
+
+        System.out.println(Arrays.toString(t1.teamPrint()));
     }
 }
