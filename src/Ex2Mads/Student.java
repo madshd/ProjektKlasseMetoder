@@ -12,7 +12,7 @@ public class Student {
 
     private double avg;
 
-    private static String[] studentChoices = new String[10];
+    private String[] studentChoices = new String[10];
 
     public Student(String name, boolean active, int [] grades) {
         this.name = name;
