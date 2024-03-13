@@ -105,18 +105,22 @@ public int teamScore() {
                 " | Students: " + students;
     }
 
-    public String[] teamPrint() {
-        // Create an array to store high-scoring active students
-        String[] print = new String[students.size()];
-        int i = 0;
-        for (Student student : students) {
-            String studentPrint = name + " | NAME | GPA | CA | " +
-                    student.getName() + " - " +
-                    student.avgGrade() + " - " +
-                    student.CorrectAnswersCount() + "\n";
-            print[i++] = studentPrint; // Tilføj den aktuelle studerendes information til print arrayet
+    public String[] printStudents() {
+        String [] printStudents = new String[students.size()+1];
+
+        String header = String.format("\n%-10s | %-14s | %s", "Name", "Average Grade", "Correct Answers");
+        printStudents[0] = header;
+        int i = 1;
+        for ( Student student : students ) {
+            String studentinfo = String.format("\n%-10s | %4f | %d",
+                    student.getName(),
+                    student.avgGrade(),
+                    student.CorrectAnswersCount());
+
+            printStudents[i] = studentinfo;
+            i++;
         }
-        return print;
+        return printStudents;
     }
 }
 
