@@ -19,24 +19,26 @@ public class Team {
         students.add(student);
     }
 
-    public String[] activeStudents() {
+    public char[] activeStudents() {
         int count = 0;
         int j = 0;
 
-        for (Student i : students) {
-            if (i.isActive()) {
+        for (Student student : students) {
+            if (student.isActive()) {
                 count++;
             }
         }
-        String activeStudents[] = new String[count];
-        for (Student i : students) {
-            if (i.isActive()) {
-                activeStudents[j] = i.getName();
+        char[] activeStudents = new char[count];
+        for (Student student : students) {
+            if (student.isActive()) {
+                activeStudents[j] = student.getName().charAt(0); // Convert String to char
                 j++;
             }
         }
         return activeStudents;
     }
+
+
 
 
     public void removeStudent (String name){
@@ -93,7 +95,7 @@ public class Team {
             String[] arr = new String[students.size()];
             int i = 0;
             for (Student student : students){
-                arr[i] = String.format("Navn: %s avg grade: %s correct answers: %s \n ",
+                arr[i] = String.format("\n Navn: %s avg grade: %s correct answers: %s",
                         student.getName(), student.avgGrade(), student.CorrectAnswersCount());
 
                 i++;}
@@ -102,17 +104,17 @@ public class Team {
         }
     public int[] testResults() {
         int[] arr = new int[10];
+        String[] correctAnswers = MultipleChoiceTest.CorrectAnswers(); // Retrieve correct answers
 
         for (Student student : students) {
+            String[] studentChoices = student.getStudentChoices(); // Retrieve student choices
             for (int i = 0; i < 10; i++) {
-                if (student.getStudentChoices()[i] == MultipleChoiceTest.CorrectAnswers()[i])
+                if (studentChoices[i].charAt(0) == correctAnswers[i].charAt(0)) // Compare characters correctly
                     arr[i]++;
             }
         }
         return arr;
     }
-
-
     @Override
     public String toString() {
         return "Team " + name +

@@ -50,22 +50,23 @@ public class StudentTeamApp {
         System.out.println();
         System.out.println("The Passing Candidates: " + Arrays.toString(t2.highScoreStudent(minAverage)));
 
-        MultipleChoiceTest.MultipleChoiceTest(s1);
-        MultipleChoiceTest.MultipleChoiceTest(s2);
-        MultipleChoiceTest.MultipleChoiceTest(s3);
-        MultipleChoiceTest.MultipleChoiceTest(s4);
-        MultipleChoiceTest.MultipleChoiceTest(s5);
-        MultipleChoiceTest.MultipleChoiceTest(s6);
-        MultipleChoiceTest.MultipleChoiceTest(s7);
-        MultipleChoiceTest.MultipleChoiceTest(s8);
-        MultipleChoiceTest.MultipleChoiceTest(s9);
-        MultipleChoiceTest.MultipleChoiceTest(s10);
+        s1.calcChoices();
+        s2.calcChoices();
+        s3.calcChoices();
+        s4.calcChoices();
+        s5.calcChoices();
+        s6.calcChoices();
+        s7.calcChoices();
+        s8.calcChoices();
+        s9.calcChoices();
+        s10.calcChoices();
+        s11.calcChoices();
 
         // Correct for 5-7 students
         System.out.println("Student 7 has: " + s7.CorrectAnswersCount() + " Correct");
         System.out.println("Team1 Overall Correct score: " + t1.TeamCorrectCount());
         System.out.println(Arrays.toString(t1.printStudent()));
 
-        System.out.println("Team Svar fra spørgsmål 1-10 hvor mange de har svaret rigtige:" + Arrays.toString(t1.testResults()));
+        System.out.println("Team Svar fra spørgsmål 1-10 hvor mange de har svaret rigtige: " + Arrays.toString(t1.testResults()));
     }
 }
