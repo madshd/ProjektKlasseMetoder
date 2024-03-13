@@ -48,13 +48,12 @@ public class Student {
     public static void MultipleChoiceTest()
     {
         int[] answers = new int[10];
-        int[] list = new int[10];
+        String[] studentChoices = new String[10];
         String[] choices = {"A", "B", "C", "D"};
         Random random = new Random();
         //Generate Array
         for (int i = 0; i < answers.length ; i++) {
             answers[i] = i;
-            list[i] = i;
         }
         for (int i = 0; i < answers.length; i++) {
             // Shuffel Array
@@ -65,8 +64,11 @@ public class Student {
         }
         for (int i = 0; i < 10 ; i++) {
             String choice = choices[answers[i] / 3];
-            System.out.println("Choices" + (list[i]+ 1) + ": " + choice);
+            System.out.println("Choices: " + (i + 1) + ": " + choice);
+            studentChoices[i] = choice;
+
         }
+        System.out.println("studentChoices: " + Arrays.toString(studentChoices));
     }
 
     @Override
