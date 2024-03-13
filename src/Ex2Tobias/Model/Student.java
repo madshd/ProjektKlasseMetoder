@@ -88,6 +88,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Name: " + name + " - " + "Activity: " + active + " | Grades: " + Arrays.toString(grades) + " | AvgGrade: " + avgGrade();
+        return "Name: " + name + " - " + "Activity: " + active + " | Grades: " + Arrays.toString(grades) + " | AvgGrade: " + avgGrade() + "| Test correct Answers : " + CorrectAnswersCount();
     }
 }

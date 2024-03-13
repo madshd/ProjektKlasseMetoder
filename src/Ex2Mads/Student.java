@@ -1,7 +1,10 @@
 package Ex2Mads;
 
-import java.util.Arrays;
+import Ex2Tobias.Model.MultipleChoiceTest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 public class Student {
     private String name;
     private boolean active;
@@ -9,10 +12,14 @@ public class Student {
 
     private double avg;
 
+    private String[] studentChoices = new String[10];
+
     public Student(String name, boolean active, int [] grades) {
         this.name = name;
         this.active = active;
         this.grades = grades;
+        this.studentChoices = studentChoices;
+
     }
 
     public boolean isActive() {
@@ -43,6 +50,46 @@ public class Student {
             avg += grades[i];
         }
         return avg/grades.length;
+    }
+
+    public int CorrectAnswersCount()
+    {
+        int count = 0;
+        for (int i = 0; i < 10 ; i++) {
+            String[] correctChoices = MultipleChoiceTest.CorrectAnswers();
+            if (studentChoices[i] == correctChoices[i])
+            {
+                count++;
+            }
+
+        } return count;
+
+    }
+
+    public String[] CalcChoices() {
+        for (int i = 0; i < 10; i++) {
+            int[] answers = new int[10];
+            String[] studentChoices = new String[10];
+            String[] choices = {"A", "B", "C", "D"};
+            Random random = new Random();
+            //Generate Array
+            for (i = 0; i < answers.length; i++) {
+                answers[i] = i;
+            }
+            for (i = 0; i < answers.length; i++) {
+                // Shuffel Array
+                int index = (int) (Math.random() * answers.length);
+                int temp = answers[i];
+                answers[i] = answers[index];
+                answers[index] = temp;
+            }
+            for (i = 0; i < 10; i++) {
+                String choice = choices[answers[i] / 3];
+//            System.out.println("Choices: " + (i+ 1) + ": " + choice);
+                this.studentChoices[i] = choice;
+
+            }
+        } return this.studentChoices;
     }
 
     @Override
