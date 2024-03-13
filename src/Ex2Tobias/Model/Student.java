@@ -22,6 +22,10 @@ public class Student {
         return active;
     }
 
+    public String[] getStudentChoices() {
+        return studentChoices;
+    }
+
     public int[] getGrades() {
         return grades;
     }
