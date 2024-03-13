@@ -1,6 +1,5 @@
-package Ex2Tobias.Model;
+package TestMads.Ex2Mads;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class StudentTeamApp {
@@ -25,7 +24,7 @@ public class StudentTeamApp {
         Student s8 = new Student("Jan", true, new int[]{7,4});
         Student s9 = new Student("Ole", true, new int[]{4,4,10,10});
         Student s10 = new Student("Mia Maja", true, new int[]{3,4,6});
-        Student s11 = new Student("Lord Bendtner", true, new int[]{7});
+        Student s11 = new Student("Bendtner", true, new int[]{7});
         Student s12 = new Student("Messi", true, new int[]{4,4,4});
 
         t2.addStudent(s7);
@@ -44,28 +43,23 @@ public class StudentTeamApp {
         System.out.println(s7.avgGrade());
 
         System.out.printf("Team average: %.4f%n", t2.averageGrade());
+        System.out.println("High Score: " + Arrays.toString(t2.highScoreStudents(7.0)));
 
-        //Min avg to pass here: 7 //opg 2.4
-        double minAverage = 7;
-        System.out.println();
-        System.out.println("The Passing Candidates: " + Arrays.toString(t2.highScoreStudent(minAverage)));
-
-        MultipleChoiceTest.MultipleChoiceTest(s1);
-        MultipleChoiceTest.MultipleChoiceTest(s2);
-        MultipleChoiceTest.MultipleChoiceTest(s3);
-        MultipleChoiceTest.MultipleChoiceTest(s4);
-        MultipleChoiceTest.MultipleChoiceTest(s5);
-        MultipleChoiceTest.MultipleChoiceTest(s6);
         MultipleChoiceTest.MultipleChoiceTest(s7);
         MultipleChoiceTest.MultipleChoiceTest(s8);
         MultipleChoiceTest.MultipleChoiceTest(s9);
         MultipleChoiceTest.MultipleChoiceTest(s10);
+        MultipleChoiceTest.MultipleChoiceTest(s11);
+        MultipleChoiceTest.MultipleChoiceTest(s12);
+        System.out.println(s7.CorrectAnswersCount());
+        System.out.println(s8.CorrectAnswersCount());
+        System.out.println(s9.CorrectAnswersCount());
+        System.out.println(s10.CorrectAnswersCount());
+        System.out.println(s11.CorrectAnswersCount());
+        System.out.println(s12.CorrectAnswersCount());
 
-        // Correct for 5-7 students
-        System.out.println("Student 7 has: " + s7.CorrectAnswersCount() + " Correct");
-        System.out.println("Team1 Overall Correct score: " + t1.TeamCorrectCount());
-        System.out.println(Arrays.toString(t1.printStudent()));
 
-        System.out.println("Team Svar fra spørgsmål 1-10 hvor mange de har svaret rigtige:" + Arrays.toString(t1.testResults()));
+        System.out.println(Arrays.toString(t2.printStudents()));
+        System.out.println("Hvilke spørgsmål og hvor mange der har svaret korrekt, fra 1-10: \n" + Arrays.toString(t2.testResults()));
     }
 }

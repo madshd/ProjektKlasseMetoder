@@ -1,4 +1,4 @@
-package Ex2Tobias.Model;
+package TestMads.Ex2Mads;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -19,8 +19,7 @@ public class MultipleChoiceTest {
         String[] correctChoices = {"A", "B", "A", "D", "A", "C", "A", "C", "A", "D"};
         return correctChoices;
     }
-
-    public String[] getStudentChoices() {
-        return studentChoices;
-    }
 }
+
+
+//studentChoices[i] = choice;

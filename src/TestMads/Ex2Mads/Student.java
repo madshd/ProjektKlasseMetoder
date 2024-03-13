@@ -1,29 +1,29 @@
-package Ex2Tobias.Model;
+package TestMads.Ex2Mads;
 
+import Ex2Tobias.Model.MultipleChoiceTest;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-
 public class Student {
     private String name;
     private boolean active;
     private int[] grades;
-    private String[] studentChoices;
 
     private double avg;
+
+    private String[] studentChoices = new String[10];
 
     public Student(String name, boolean active, int [] grades) {
         this.name = name;
         this.active = active;
         this.grades = grades;
-        this.studentChoices = new String[10];
+        this.studentChoices = studentChoices;
+
     }
 
     public boolean isActive() {
         return active;
-    }
-
-    public String[] getStudentChoices() {
-        return studentChoices;
     }
 
     public int[] getGrades() {
@@ -33,6 +33,11 @@ public class Student {
     public String getName() {
         return name;
     }
+
+    public String[] getStudentChoices() {
+        return studentChoices;
+    }
+
 
     public int maxGrade() {
         int max = 0;
@@ -51,6 +56,7 @@ public class Student {
         }
         return avg/grades.length;
     }
+
     public int CorrectAnswersCount()
     {
         int count = 0;
@@ -60,10 +66,11 @@ public class Student {
             {
                 count++;
             }
-            
+
         } return count;
-        
+
     }
+
     public String[] CalcChoices() {
         for (int i = 0; i < 10; i++) {
             int[] answers = new int[10];
@@ -92,6 +99,9 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Name: " + name + " - " + "Activity: " + active + " | Grades: " + Arrays.toString(grades) + " | AvgGrade: " + avgGrade() + "| Test correct Answers : " + CorrectAnswersCount();
+        return "[Name: " + name +
+                " - " + "Activity: " + active +
+                " | Grades: " + Arrays.toString(grades) +
+                " - GPA: " + avgGrade() + "]";
     }
 }

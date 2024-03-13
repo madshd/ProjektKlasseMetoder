@@ -1,12 +1,12 @@
-package Ex2Mads;
+package TestMads.Ex2Mads;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import Ex2Mads.Student;
+
 public class Team {
     private String name;
     private String room;
     private ArrayList<Student> students;
+
     public Team(String name, String room) {
         this.name = name;
         this.room = room;
@@ -85,25 +85,53 @@ public Student[] highScoreStudents(double minAverage) {
             index++;
         }
     }
-
     return highScore;
 }
-//        for (Student student : students) { // for hver student fra Student klassen, der er i students arrayListen
-//            int count = 0;
-//            if (student.isActive() == true && student.avgGrade() >= minAverage) {
-//
-//                count++;
-//            }
-//            if (student.avgGrade() < minAverage) {
-//                count++;
-//            }
-//        }
-//        return highScoreStudents();
+
+public int teamScore() {
+    int totalSum = 0;
+    for (Student student : students) {
+        totalSum += student.CorrectAnswersCount();
+    }
+    return totalSum;
+}
+
+
     @Override
     public String toString() {
         return "Team " + name +
                 " | Room: " + room +
                 " | Students: " + students;
+    }
+
+    public String[] printStudents() {
+        String [] printStudents = new String[students.size()+1];
+
+        String header = String.format("\n%-10s | %-14s | %s", "Name", "Average Grade", "Correct Answers");
+        printStudents[0] = header;
+        int i = 1;
+        for ( Student student : students ) {
+            String studentinfo = String.format("\n%-10s | %4f | %d",
+                    student.getName(),
+                    student.avgGrade(),
+                    student.CorrectAnswersCount());
+
+            printStudents[i] = studentinfo;
+            i++;
+        }
+        return printStudents;
+    }
+
+    public int[] testResults() {
+        int[] arr = new int[10];
+
+        for (Student student : students) {
+            for (int i = 0; i < 10; i++) {
+                if (student.getStudentChoices()[i] == MultipleChoiceTest.CorrectAnswers()[i])
+                    arr[i]++;
+            }
+        }
+        return arr;
     }
 }
 
