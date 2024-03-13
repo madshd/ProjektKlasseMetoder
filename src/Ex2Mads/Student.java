@@ -1,9 +1,10 @@
 package Ex2Mads;
 
+import Ex2Tobias.Model.MultipleChoiceTest;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-
 public class Student {
     private String name;
     private boolean active;
@@ -11,12 +12,14 @@ public class Student {
 
     private double avg;
 
-    private String[] answers = new String[10];
+    private static String[] studentChoices = new String[10];
 
     public Student(String name, boolean active, int [] grades) {
         this.name = name;
         this.active = active;
         this.grades = grades;
+        this.studentChoices = studentChoices;
+
     }
 
     public boolean isActive() {
@@ -49,28 +52,44 @@ public class Student {
         return avg/grades.length;
     }
 
-    public static void MultipleChoiceTest()
+    public int CorrectAnswersCount()
     {
-        int[] answers = new int[10];
-        int[] list = new int[10];
-        String[] choices = {"A", "B", "C", "D"};
-        Random random = new Random();
-        //Generate Array
-        for (int i = 0; i < answers.length ; i++) {
-            answers[i] = i;
-            list[i] = i;
-        }
-        for (int i = 0; i < answers.length; i++) {
-            // Shuffel Array
-            int index = (int)(Math.random() * answers.length);
-            int temp = answers[i];
-            answers[i] = answers[index];
-            answers[index] = temp;
-        }
+        int count = 0;
         for (int i = 0; i < 10 ; i++) {
-            String choice = choices[answers[i] / 3];
-            System.out.println("Choices" + (list[i]+ 1) + ": " + choice);
-        }
+            String[] correctChoices = MultipleChoiceTest.CorrectAnswers();
+            if (studentChoices[i] == correctChoices[i])
+            {
+                count++;
+            }
+
+        } return count;
+
+    }
+
+    public String[] CalcChoices() {
+        for (int i = 0; i < 10; i++) {
+            int[] answers = new int[10];
+            String[] studentChoices = new String[10];
+            String[] choices = {"A", "B", "C", "D"};
+            Random random = new Random();
+            //Generate Array
+            for (i = 0; i < answers.length; i++) {
+                answers[i] = i;
+            }
+            for (i = 0; i < answers.length; i++) {
+                // Shuffel Array
+                int index = (int) (Math.random() * answers.length);
+                int temp = answers[i];
+                answers[i] = answers[index];
+                answers[index] = temp;
+            }
+            for (i = 0; i < 10; i++) {
+                String choice = choices[answers[i] / 3];
+//            System.out.println("Choices: " + (i+ 1) + ": " + choice);
+                this.studentChoices[i] = choice;
+
+            }
+        } return this.studentChoices;
     }
 
     @Override
