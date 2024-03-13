@@ -7,6 +7,7 @@ public class Team {
     private String name;
     private String room;
     private ArrayList<Student> students;
+
     public Team(String name, String room) {
         this.name = name;
         this.room = room;
@@ -85,25 +86,37 @@ public Student[] highScoreStudents(double minAverage) {
             index++;
         }
     }
-
     return highScore;
 }
-//        for (Student student : students) { // for hver student fra Student klassen, der er i students arrayListen
-//            int count = 0;
-//            if (student.isActive() == true && student.avgGrade() >= minAverage) {
-//
-//                count++;
-//            }
-//            if (student.avgGrade() < minAverage) {
-//                count++;
-//            }
-//        }
-//        return highScoreStudents();
+
+public int teamScore() {
+    int totalSum = 0;
+    for (Student student : students) {
+        totalSum += student.CorrectAnswersCount();
+    }
+    return totalSum;
+}
+
+
     @Override
     public String toString() {
         return "Team " + name +
                 " | Room: " + room +
                 " | Students: " + students;
+    }
+
+    public String[] teamPrint() {
+        // Create an array to store high-scoring active students
+        String[] print = new String[students.size()];
+        int i = 0;
+        for (Student student : students) {
+            String studentPrint = name + " | NAME | GPA | CA | " +
+                    student.getName() + " - " +
+                    student.avgGrade() + " - " +
+                    student.CorrectAnswersCount() + "\n";
+            print[i++] = studentPrint; // Tilføj den aktuelle studerendes information til print arrayet
+        }
+        return print;
     }
 }
 

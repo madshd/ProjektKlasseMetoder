@@ -55,6 +55,8 @@ public class StudentTeamApp {
         System.out.println(s7.CorrectAnswersCount());
         System.out.println(s6.CorrectAnswersCount());
         System.out.println(s5.CorrectAnswersCount());
-        
+
+
+        System.out.println(Arrays.toString(t1.teamPrint()));
     }
 }
