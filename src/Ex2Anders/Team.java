@@ -111,6 +111,18 @@ public class Team {
         return highScore;
     }
 
+    public int[] testResults() {
+        int[] arr = new int[10];
+
+        for (Student student : students) {
+            for (int i = 0; i < 10; i++) {
+                if (student.getSvarMC()[i] == MultipleChoiceTest.getKorrekteSvar()[i])
+                    arr[i]++;
+            }
+        }
+        return arr;
+    }
+
     //        for (Student student : students) { // for hver student fra Student klassen, der er i students arrayListen
 //            int count = 0;
 //            if (student.isActive() == true && student.avgGrade() >= minAverage) {

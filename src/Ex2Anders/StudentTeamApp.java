@@ -88,5 +88,7 @@ public class StudentTeamApp {
         System.out.println("\n\n\n");
 
         System.out.println(Arrays.toString(t1.print()));
+
+        System.out.println("Spørgsmål 1-10 antal korrekte svar pr. studerende:" + Arrays.toString(t1.testResults()));
     }
 }
