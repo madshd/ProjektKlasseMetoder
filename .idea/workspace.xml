@@ -55,7 +55,7 @@
       <recent name="Ex2Anders" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App3b">
+  <component name="RunManager" selected="Application.StudentTeamApp">
     <configuration name="App3b" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex2Tobias.Test.App3b" />
       <module name="ProjektKlasseMetoder" />
@@ -99,8 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App3b" />
         <item itemvalue="Application.StudentTeamApp" />
+        <item itemvalue="Application.App3b" />
         <item itemvalue="Application.TestMads.Ex2Mads.StudentTeamApp" />
         <item itemvalue="Application.Ex2Anders.StudentTeamApp" />
         <item itemvalue="Application.Test" />
