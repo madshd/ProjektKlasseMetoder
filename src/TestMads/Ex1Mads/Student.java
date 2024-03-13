@@ -1,4 +1,4 @@
-package Ex1Mads;
+package TestMads.Ex1Mads;
 
 public class Student {
     private String name;

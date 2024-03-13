@@ -1,9 +1,7 @@
-package Ex2Mads;
+package TestMads.Ex2Mads;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import Ex2Mads.Student;
 public class Team {
     private String name;
     private String room;

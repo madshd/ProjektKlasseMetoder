@@ -1,4 +1,4 @@
-package Ex2Mads;
+package TestMads.Ex2Mads;
 
 import Ex2Tobias.Model.MultipleChoiceTest;
 

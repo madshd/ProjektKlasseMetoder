@@ -1,6 +1,4 @@
-package Ex2Mads;
-
-import Ex2Mads.Student;
+package TestMads.Ex2Mads;
 
 import java.util.Arrays;
 import java.util.Random;
