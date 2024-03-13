@@ -22,8 +22,19 @@ public class Student {
 
     }
 
+    public Student() {
+        this.name = name;
+        this.active = active;
+        this.grades = grades;
+        this.studentChoices = studentChoices;
+    }
+
     public boolean isActive() {
         return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public int[] getGrades() {
@@ -32,6 +43,10 @@ public class Student {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String[] getStudentChoices() {

@@ -13,6 +13,20 @@ public class Team {
         this.students = new ArrayList<>();
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public Team() {
+        this.name = name;
+        this.room = room;
+        this.students = new ArrayList<>();
+    }
+
     public void addStudent(Student student) {
         students.add(student);
     }
