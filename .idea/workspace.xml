@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -31,6 +31,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App3b.executor": "Run",
     "Application.Ex2Anders.StudentTeamApp.executor": "Run",
     "Application.StudentTeamApp.executor": "Run",
     "Application.Test.executor": "Run",
@@ -54,7 +55,14 @@
       <recent name="Ex2Anders" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StudentTeamApp">
+  <component name="RunManager" selected="Application.App3b">
+    <configuration name="App3b" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex2Tobias.Test.App3b" />
+      <module name="ProjektKlasseMetoder" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Ex2Anders.StudentTeamApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex2Anders.StudentTeamApp" />
       <module name="ProjektKlasseMetoder" />
@@ -91,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App3b" />
         <item itemvalue="Application.StudentTeamApp" />
         <item itemvalue="Application.TestMads.Ex2Mads.StudentTeamApp" />
         <item itemvalue="Application.Ex2Anders.StudentTeamApp" />

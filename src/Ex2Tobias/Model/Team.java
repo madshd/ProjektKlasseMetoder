@@ -14,6 +14,13 @@ public class Team {
         this.room = room;
         this.students = new ArrayList<>();
     }
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 
     public void addStudent(Student student) {
         students.add(student);

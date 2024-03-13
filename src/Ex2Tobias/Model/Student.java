@@ -66,6 +66,7 @@ public class Student {
         return count;
     }
 
+
     public char[] calcChoices() {
         this.studentChoices = MultipleChoiceTest.MultipleChoiceTest();
         return studentChoices;
