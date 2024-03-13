@@ -60,8 +60,10 @@ public class StudentTeamApp {
         MultipleChoiceTest.MultipleChoiceTest(s8);
         MultipleChoiceTest.MultipleChoiceTest(s9);
         MultipleChoiceTest.MultipleChoiceTest(s10);
+        
         // Correct for 5-7 students
         System.out.println("Student 7 has: " + s7.CorrectAnswersCount() + " Correct");
         System.out.println("Team1 Overall Correct score: " + t1.TeamCorrectCount());
+        System.out.println(Arrays.toString(t1.printStudent()));
     }
 }

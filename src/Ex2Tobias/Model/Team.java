@@ -1,5 +1,6 @@
 package Ex2Tobias.Model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -88,6 +89,18 @@ public class Team {
             teamCount += students.CorrectAnswersCount();
       return teamCount;
     }
+        public String[] printStudent() {
+            String[] arr = new String[students.size()];
+            int i = 0;
+            for (Student student : students){
+                arr[i] = String.format("Navn: %s avg grade: %s correct answers: %s ",
+                        student.getName(), student.avgGrade(), student.CorrectAnswersCount());
+
+                i++;}
+
+            return arr;
+        }
+
 
     @Override
     public String toString() {
