@@ -50,6 +50,11 @@ public class StudentTeamApp {
         System.out.println();
         System.out.println("The Passing Candidates: " + Arrays.toString(t2.highScoreStudent(minAverage)));
 
-        Student.MultipleChoiceTest();
+        MultipleChoiceTest.MultipleChoiceTest(s7);
+        MultipleChoiceTest.MultipleChoiceTest(s6);
+        MultipleChoiceTest.MultipleChoiceTest(s5);
+        System.out.println(s7.CorrectAnswersCount());
+        System.out.println(s6.CorrectAnswersCount());
+        System.out.println(s5.CorrectAnswersCount());
     }
 }
