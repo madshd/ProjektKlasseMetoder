@@ -26,7 +26,7 @@ public class TeamApp {
             System.out.println("5: Show info and results for all teams");
             System.out.println("6: Exit program");
             int menuChoice = input.nextInt();
-
+/*
             if (menuChoice == 1) {
                 team[teamCount] = new Team();
                 System.out.println("Input team name ");
@@ -35,6 +35,8 @@ public class TeamApp {
                 team.setRoom(input.next());
                 teamCount++;
             }
+
+
             if (menuChoice == 2) {
                 Student student = new Student();
                 System.out.println("Name of students team: ");
@@ -60,6 +62,8 @@ public class TeamApp {
             if (menuChoice == 3) {
 
             }
+
+ */
         }
     }
 }
