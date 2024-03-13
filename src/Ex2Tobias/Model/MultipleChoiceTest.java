@@ -19,4 +19,8 @@ public class MultipleChoiceTest {
         String[] correctChoices = {"A", "B", "A", "D", "A", "C", "A", "C", "A", "D"};
         return correctChoices;
     }
+
+    public String[] getStudentChoices() {
+        return studentChoices;
+    }
 }
